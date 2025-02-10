@@ -1,2 +1,2 @@
 # Secret 🤭
-Next.js, Typescript
+Next.js, Typescript, Tailwind CSS
