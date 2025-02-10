@@ -1,2 +1,2 @@
-# surprise-vlt-next
-##Secret 🤭
+# Secret 🤭
+Next.js, Typescript
