@@ -3,7 +3,8 @@
 export default function Home() {
   return (
     <>
-      <p>ABC</p>
+      <p>Content</p>
+      <p>ภาษาไทย</p>
     </>
   );
 }
