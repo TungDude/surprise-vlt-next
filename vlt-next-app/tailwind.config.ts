@@ -12,6 +12,23 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        'gradient-animation': 'gradient-animation 20s ease infinite',
+        "jump-sequence": "jump 0.5s ease-out forwards",
+      },
+      keyframes: {
+        'gradient-animation': {
+          '0%': { 'background-position': '0% 50%', 'background-color': '#ffafcc' }, // Light Pink
+          '25%': { 'background-position': '50% 50%', 'background-color': '#ff94a4' }, // Darker Pink
+          '50%': { 'background-position': '100% 50%', 'background-color': '#ff6b81' }, // Reddish Pink
+          '75%': { 'background-position': '50% 50%', 'background-color': '#ff94a4' }, // Back to Darker Pink
+          '100%': { 'background-position': '0% 50%', 'background-color': '#ffafcc' }, // Back to Light Pink
+        },
+        jump: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+      },
     },
   },
   plugins: [],
