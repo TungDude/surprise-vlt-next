@@ -24,7 +24,7 @@ function Header() {
     };
 
     return (
-        <p className="text-4xl font-semibold text-purple-700 cursor-pointer">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-purple-700 cursor-pointer">
             {text.split("").map((char, index) => {
                 const { className, style } = getCharacterStyle(char, index);
                 return (
