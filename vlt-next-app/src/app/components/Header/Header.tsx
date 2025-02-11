@@ -1,10 +1,23 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { cn } from "@/app/lib/utils";
+import path from "path";
 
 function Header() {
+    const pathName = usePathname();
     const [Play, setPlay] = useState(true);
-    const text = "❤️ Happy Valentine's Day ❤️";
+
+    const getText = () => {
+        switch(pathName) {
+            case "/":
+                return "❤️ Happy Valentine's day ❤️";
+            default:
+                return `❤️ ${pathName} ❤️`;
+        }
+    };
+
+    const text = getText();
 
     // Start the animation after 8 seconds
     useEffect(() => {
@@ -22,7 +35,7 @@ function Header() {
                             "inline-block", 
                             Play && "animate-jump-sequence",
                             char === " " && "w-2", 
-                            index % 25 === 0 && "text-red-600", 
+                            (index === 0 || index === text.length - 2) && "text-red-600", 
                             char === "❤️" && "text-inherit",
                         )}
                         style={{
