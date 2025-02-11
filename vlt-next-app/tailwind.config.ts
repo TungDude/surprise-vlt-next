@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: "#2a152a",
+        lightgray: "#e5e7eb", 
       },
       animation: {
         'gradient-animation': 'gradient-animation 20s ease infinite',
