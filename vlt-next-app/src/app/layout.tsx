@@ -21,8 +21,8 @@ const itim = Itim({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Valentine's day",
-  description: "Happy Valentine's day from Tung to Tarn",
+  title: "For Saitarn",
+  description: "Love from Tung to Tarn",
 };
 
 export default function RootLayout({

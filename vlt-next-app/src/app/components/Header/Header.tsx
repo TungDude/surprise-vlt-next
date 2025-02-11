@@ -1,37 +1,45 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/app/lib/utils";
 
 function Header() {
+    const pathName = usePathname();
     const [Play, setPlay] = useState(true);
-    const text = "❤️ Happy Valentine's Day ❤️";
 
-    // Start the animation after 5 seconds
+    const getText = () => {
+        switch(pathName) {
+            case "/":
+                return "❤️ Happy Valentine's day ❤️";
+            default:
+                return `❤️ ${pathName} ❤️`;
+        }
+    };
+
+    const text = getText();
+
+    // Start the animation after 8 seconds
     useEffect(() => {
         const interval = setInterval(() => setPlay(true), 8000);
         return () => clearInterval(interval);
     }, []);
 
-    // Function to add specific styles for spaces
-    const getCharacterStyle = (char: string, index: number) => {
-        const isSpace = char === " ";
-        const isHeart = char === "❤️";
-        const isRedHeart = index % 25 === 0;
-
-        return {
-            className: `inline-block ${Play ? "animate-jump-sequence" : ""} ${isSpace ? "w-2" : ""} ${isRedHeart ? "text-red-600" : ""} ${isHeart ? "text-inherit" : ""}`,
-            style: { animationDelay: `${index * 0.1}s` },
-        };
-    };
-
     return (
-        <p className="text-4xl font-semibold text-purple-700 cursor-pointer">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-purple-700 cursor-pointer">
             {text.split("").map((char, index) => {
-                const { className, style } = getCharacterStyle(char, index);
                 return (
                     <span
                         key={index}
-                        className={className}
-                        style={style}
+                        className={cn(
+                            "inline-block", 
+                            Play && "animate-jump-sequence",
+                            char === " " && "w-2", 
+                            (index === 0 || index === text.length - 2) && "text-red-600", 
+                            char === "❤️" && "text-inherit",
+                        )}
+                        style={{
+                            animationDelay: `${index * 0.1}s`, 
+                        }}
                         onAnimationEnd={() => index === text.length - 1 && setPlay(false)}
                     >
                         {char}
