@@ -28,14 +28,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">Enter Passcode</div>
+      <div className="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">Enter Passcode</div>
       <div className="flex my-8 space-x-2">
         {[...Array(6)].map((_, index) => (
           <div
             key={`passcode-${index}`}  // Unique key for passcode indicators
             className={cn(
               "w-4 h-4", 
-              index < input.length ? "flex justify-center items-center" : "rounded-full bg-gray-100", 
+              index < input.length ? "flex justify-center items-center" : "rounded-full bg-lightgray", 
             )}
           >
             {index < input.length && "❤️"}
@@ -50,7 +50,7 @@ export default function Home() {
               value === "delete" ? handleDelete() : handleButtonClick(value.toString())
             }
             className={cn(
-              value === "" ? "cursor-default" : "flex items-center justify-center w-16 h-16 text-xl font-semibold rounded-full bg-white border shadow-md active:bg-gray-200"
+              value === "" ? "cursor-default" : "flex items-center justify-center w-16 h-16 text-black text-xl font-semibold rounded-full bg-white border shadow-md active:bg-gray-200"
             )}
           >
             {value === "delete" ? <Delete /> : value}
