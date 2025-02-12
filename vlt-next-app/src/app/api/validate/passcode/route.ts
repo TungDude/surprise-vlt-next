@@ -15,6 +15,9 @@ export async function POST(req: NextRequest) {
             route: isValid ? passcodes[code] : "", 
         }, { status: 200 });
     } catch (error) {
-        return NextResponse.json({ valid: false }, { status: 400 });
+        return NextResponse.json({ 
+            valid: false, 
+            error: error, 
+        }, { status: 400 });
     }
 }

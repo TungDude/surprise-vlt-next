@@ -10,6 +10,7 @@ class RequestController {
         } catch (error) {
             return {
                 valid: false,
+                error: error,
             }
         }
     }

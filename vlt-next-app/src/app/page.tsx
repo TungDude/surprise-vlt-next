@@ -2,9 +2,7 @@
 import { useState, useEffect } from "react";
 import { Delete } from 'lucide-react';
 import { cn } from "./lib/utils";
-import RequestController from "./lib/RequestController";
 import { useAuthContext } from "./context/AuthContext";
-import { verify } from "crypto";
 
 export default function Home() {
   const [input, setInput] = useState("");
