@@ -3,16 +3,25 @@ import { useState, useEffect } from "react";
 import { Delete } from 'lucide-react';
 import { cn } from "./lib/utils";
 import { useAuthContext } from "./context/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const [input, setInput] = useState("");
   const { verifyPasscode } = useAuthContext();
 
   useEffect(() => {
-    if (input.length === 6) {
-      verifyPasscode(input);
-    }
-  }, [input]);
+    const handleVerifyPasscode = async () => {
+      if (input.length === 6) {
+        const route = await verifyPasscode(input);  // Await the result here
+        if (route) {
+          router.push(route);
+        }
+      }
+    };
+
+    handleVerifyPasscode();  // Call the async function
+  }, [input, verifyPasscode]);
 
   const handleButtonClick = (value: string) => {
     if (input.length < 6) {

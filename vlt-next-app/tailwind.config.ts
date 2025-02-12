@@ -13,6 +13,10 @@ export default {
         foreground: "var(--foreground)",
         black: "#2a152a",
         lightgray: "#e5e7eb", 
+        green: "#37c21b", 
+        darkgreen: "#257c13", 
+        brightred: "#ed1818", 
+        darkred: "#b31616",
       },
       animation: {
         'gradient-animation': 'gradient-animation 20s ease infinite',
