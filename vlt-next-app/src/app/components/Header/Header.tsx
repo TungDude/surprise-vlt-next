@@ -10,6 +10,8 @@ function Header() {
     const getText = () => {
         switch(pathName) {
             case "/":
+                return "❤️ Welcome!!! ❤️"
+            case "/valentine":
                 return "❤️ Happy Valentine's day ❤️";
             default:
                 return `❤️ ${pathName} ❤️`;
