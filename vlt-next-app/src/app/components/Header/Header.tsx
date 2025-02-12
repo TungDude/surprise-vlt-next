@@ -8,13 +8,12 @@ function Header() {
     const [Play, setPlay] = useState(true);
 
     const getText = () => {
-        switch(pathName) {
-            case "/":
-                return "❤️ Welcome!!! ❤️"
-            case "/valentine":
-                return "❤️ Happy Valentine's day ❤️";
-            default:
-                return `❤️ ${pathName} ❤️`;
+        if (pathName === "/") {
+            return "❤️ Welcome!!! ❤️";
+        } else if (pathName.startsWith("/valentine")) {
+            return "❤️ Happy Valentine's day ❤️";
+        } else {
+            return `❤️ ${pathName} ❤️`;
         }
     };
 
