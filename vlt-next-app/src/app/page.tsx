@@ -2,17 +2,17 @@
 import { useState, useEffect } from "react";
 import { Delete } from 'lucide-react';
 import { cn } from "./lib/utils";
+import RequestController from "./lib/RequestController";
+import { useAuthContext } from "./context/AuthContext";
+import { verify } from "crypto";
 
 export default function Home() {
   const [input, setInput] = useState("");
+  const { verifyPasscode } = useAuthContext();
 
   useEffect(() => {
     if (input.length === 6) {
-      if (input === "270322") {
-        console.log("correct");
-      } else {
-        console.log("wrong");
-      }
+      verifyPasscode(input);
     }
   }, [input]);
 
@@ -34,8 +34,8 @@ export default function Home() {
           <div
             key={`passcode-${index}`}  // Unique key for passcode indicators
             className={cn(
-              "w-4 h-4", 
-              index < input.length ? "flex justify-center items-center" : "rounded-full bg-lightgray", 
+              "w-4 h-4",
+              index < input.length ? "flex justify-center items-center" : "rounded-full bg-lightgray",
             )}
           >
             {index < input.length && "❤️"}
