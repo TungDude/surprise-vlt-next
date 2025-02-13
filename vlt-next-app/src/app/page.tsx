@@ -21,7 +21,7 @@ export default function Home() {
     };
 
     handleVerifyPasscode();  // Call the async function
-  }, [input, verifyPasscode]);
+  }, [input, verifyPasscode, router]);
 
   const handleButtonClick = (value: string) => {
     if (input.length < 6) {
