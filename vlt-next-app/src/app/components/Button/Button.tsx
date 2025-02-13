@@ -6,9 +6,10 @@ interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLButtonElement>; // Correct type for onClick
     variant?: "primary" | "secondary" | "blackwhite" | "warning" | "blueboy"; // Restrict variants to valid strings
     className?: string;
+    disabled?: boolean,
 }
 
-const Button = ({ label, onClick, variant = "primary", className }: ButtonProps) => {
+const Button = ({ label, onClick, variant = "primary", className, disabled = false }: ButtonProps) => {
     const baseClasses = "text-white py-3 px-8 rounded-lg";
     const variantClasses = {
         primary: "bg-green hover:bg-darkgreen",
@@ -26,6 +27,7 @@ const Button = ({ label, onClick, variant = "primary", className }: ButtonProps)
                 variantClasses[variant],
                 className,
             )}
+            disabled={disabled}
         >
             {label}
         </button>
