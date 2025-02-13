@@ -22,7 +22,7 @@ const TypingText = ({ message, onDone }: TypingTextProps) => {
         }
 
         onDone();
-    }, [index, message, speed]);
+    }, [index, message, speed, onDone]);
 
     return (
         <div
