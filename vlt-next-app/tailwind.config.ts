@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from 'tailwindcss/plugin';
 
 export default {
   content: [
@@ -51,5 +52,21 @@ export default {
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    plugin(function({ addUtilities }) {
+      addUtilities({
+        '.backface-visible': {
+          'backface-visibility': 'visible !important',
+        },
+        '.backface-hidden': {
+          'backface-visibility': 'hidden !important',
+        },
+        '.transform-3d': {
+          'transform-style': 'preserve-3d', 
+        },
+        '.rotate-y-180': {
+          'transform': 'rotateY(180deg)', 
+        }
+      });
+    }),
   ],
 } satisfies Config;
