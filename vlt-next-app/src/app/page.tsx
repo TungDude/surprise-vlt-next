@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">Enter Passcode</div>
+      <div className="text-black text-vary font-semibold">Enter Passcode</div>
       <div className="flex my-8 space-x-2">
         {[...Array(6)].map((_, index) => (
           <div
