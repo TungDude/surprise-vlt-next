@@ -18,6 +18,8 @@ export default {
         darkgreen: "#257c13", 
         brightred: "#ed1818", 
         darkred: "#b31616",
+        lightblue: '#5abae1',
+        blue: '#2eace0',
       },
       animation: {
         'gradient-animation': 'gradient-animation 20s ease infinite',
