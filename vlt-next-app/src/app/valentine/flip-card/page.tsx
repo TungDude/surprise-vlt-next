@@ -1,10 +1,14 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import ProtectedRoute from "@/app/components/ProtectedRoute/ProtectedRoute";
 import FlipCard from "@/app/components/FlipCard/FlipCard";
 import Button from "@/app/components/Button/Button";
+import Checkbox from "@/app/components/Checkbox/Checkbox";
+import { cn } from "@/app/lib/utils";
 
 export default function FlipCardsPage() {
+    const router = useRouter();
     const flipCardsData = [
         { imgSrc: "/images/h_1.jpg", text: "I" },
         { imgSrc: "/images/h_2.jpg", text: "Love" },
@@ -17,10 +21,29 @@ export default function FlipCardsPage() {
     );
 
     const allClicked = Object.values(clicked).every(Boolean);
+    const [checked, setChecked] = useState(false);
+    const [shake, setShake] = useState(false);
+
+    const handleCheckboxClick = () => {
+        setChecked(prev => !prev);
+    }
 
     const handleUpdateClicked = (index: number) => {
         setClicked(prev => ({ ...prev, [index]: !prev[index] }));
     };
+
+    const handleClickContinue = () => {
+        if (!checked) {
+            setShake(true);
+            setTimeout(() => {
+                setShake(false);
+            }, 820);
+
+            return;
+        }
+
+        router.push('message');
+    }
 
     return (
         <ProtectedRoute>
@@ -37,10 +60,30 @@ export default function FlipCardsPage() {
                 ))}
             </div>
             {allClicked && (
-                <Button
-                    label="Yes"
-                    variant="blueboy"
-                />
+                <>
+                    <div
+                        className={cn(
+                            "flex flex-cols justify-center items-center gap-2", 
+                            shake && "animate-shake",
+                        )}
+                    >
+                        <Checkbox
+                            checked={checked}
+                            onCheck={handleCheckboxClick}
+                        />
+                        <span
+                            className="break-words"
+                        >
+                            ฉันยอมรับ ว่าฉันเป็นหมาจิ๋ว 🐕‍🦺
+                        </span>
+                    </div>
+                    <Button
+                        label="ไปต่อเลยยย"
+                        variant="blueboy"
+                        onClick={handleClickContinue}
+                        disabled={shake}
+                    />
+                </>
             )}
         </ProtectedRoute>
     );
