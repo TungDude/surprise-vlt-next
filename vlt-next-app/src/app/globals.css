@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* src/styles/global.css */
+@layer utilities {
+  .text-vary {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

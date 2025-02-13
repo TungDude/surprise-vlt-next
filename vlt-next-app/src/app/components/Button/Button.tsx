@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 interface ButtonProps {
     label: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>; // Correct type for onClick
-    variant?: "primary" | "secondary" | "blackwhite" | "warning"; // Restrict variants to valid strings
+    variant?: "primary" | "secondary" | "blackwhite" | "warning" | "blueboy"; // Restrict variants to valid strings
     className?: string;
 }
 
@@ -15,6 +15,7 @@ const Button = ({ label, onClick, variant = "primary", className }: ButtonProps)
         secondary: "bg-lightgray hover:bg-black",
         warning: "bg-brightred hover:bg-darkred", 
         blackwhite: "bg-black",
+        blueboy: "bg-lightblue hover:bg-blue",
     };
 
     return (

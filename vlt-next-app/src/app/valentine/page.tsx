@@ -28,7 +28,7 @@ export default function Valentine() {
 
     return (
         <ProtectedRoute>
-            <div className="flex flex-col items-center justify-center text-black gap-16 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+            <div className="flex flex-col items-center justify-center text-black gap-16 text-vary">
                 <Image
                     src={`/images/wrong_${wrongCount}.jpg`}
                     alt="Image"
