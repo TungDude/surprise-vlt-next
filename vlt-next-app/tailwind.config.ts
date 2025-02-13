@@ -26,7 +26,9 @@ export default {
         "jump-sequence": "jump 0.5s ease-out forwards",
         "flip": 'flip 0.6s forwards',
         "unflip": 'unflip 0.6s forwards',
-        'shake': 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',
+        "shake": 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',
+        "fadein": "fadein 2s forwards",
+        "blinker": "blink 1.4s infinite",
       },
       keyframes: {
         'gradient-animation': {
@@ -62,6 +64,22 @@ export default {
           },
           '40%, 60%': {
             transform: 'translate3d(4px, 0, 0)'
+          }
+        },
+        "fadein": {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          }
+        },
+        "blink": {
+          "50%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
           }
         },
       },
