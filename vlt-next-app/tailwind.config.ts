@@ -13,10 +13,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         black: "#2a152a",
-        lightgray: "#e5e7eb", 
-        green: "#37c21b", 
-        darkgreen: "#257c13", 
-        brightred: "#ed1818", 
+        lightgray: "#e5e7eb",
+        green: "#37c21b",
+        darkgreen: "#257c13",
+        brightred: "#ed1818",
         darkred: "#b31616",
         lightblue: '#5abae1',
         blue: '#2eace0',
@@ -26,6 +26,7 @@ export default {
         "jump-sequence": "jump 0.5s ease-out forwards",
         "flip": 'flip 0.6s forwards',
         "unflip": 'unflip 0.6s forwards',
+        'shake': 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',
       },
       keyframes: {
         'gradient-animation': {
@@ -49,12 +50,26 @@ export default {
           '0%': { transform: 'rotateY(180deg)' },
           '100%': { transform: 'rotateY(0deg)' },
         },
+        'shake': {
+          '10%, 90%': {
+            transform: 'translate3d(-1px, 0, 0)'
+          },
+          '20%, 80%': {
+            transform: 'translate3d(2px, 0, 0)'
+          },
+          '30%, 50%, 70%': {
+            transform: 'translate3d(-4px, 0, 0)'
+          },
+          '40%, 60%': {
+            transform: 'translate3d(4px, 0, 0)'
+          }
+        },
       },
     },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
-    plugin(function({ addUtilities }) {
+    plugin(function ({ addUtilities }) {
       addUtilities({
         '.backface-visible': {
           'backface-visibility': 'visible !important',
@@ -63,10 +78,10 @@ export default {
           'backface-visibility': 'hidden !important',
         },
         '.transform-3d': {
-          'transform-style': 'preserve-3d', 
+          'transform-style': 'preserve-3d',
         },
         '.rotate-y-180': {
-          'transform': 'rotateY(180deg)', 
+          'transform': 'rotateY(180deg)',
         }
       });
     }),
