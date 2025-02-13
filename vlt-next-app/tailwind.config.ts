@@ -30,7 +30,7 @@ export default {
           '75%': { 'background-position': '50% 50%', 'background-color': '#ff94a4' }, // Back to Darker Pink
           '100%': { 'background-position': '0% 50%', 'background-color': '#ffafcc' }, // Back to Light Pink
         },
-        jump: {
+        "jump": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-15px)" },
         },
