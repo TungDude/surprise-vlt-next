@@ -14,9 +14,9 @@ export default function MessagePage() {
 
     const fetchMessage = async () => {
         RequestController.fetchVltMessage()
-        .then(response => {
-            setMessage(response.message);
-        });
+            .then(response => {
+                setMessage(response.message);
+            });
     }
 
     const handleDone = () => {
@@ -25,19 +25,23 @@ export default function MessagePage() {
 
     return (
         <ProtectedRoute>
-            {message !== "" && (
-                <TypingText
-                    message={message}
-                    onDone={handleDone}
-                />
-            )}
-            {done && (
-                <span
-                    className="text-vary text-darkred font-semibold animate-fadein"
-                >
-                    Will you be my Valentine?
-                </span>
-            )}
+            <div
+                className="flex flex-col justify-center items-center gap-4"
+            >
+                {message !== "" && (
+                    <TypingText
+                        message={message}
+                        onDone={handleDone}
+                    />
+                )}
+                {done && (
+                    <span
+                        className="text-vary text-darkred font-semibold animate-fadein animate-pulse"
+                    >
+                        Will you be my Valentine?
+                    </span>
+                )}
+            </div>
         </ProtectedRoute>
     )
 }
