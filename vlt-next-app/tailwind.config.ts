@@ -32,6 +32,12 @@ export default {
         "shake": 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',
         "fadein": "fadein 2s forwards",
         "blinker": "blink 1.4s infinite",
+        "blob-1-slow": "blob-1 40s infinite ease-in-out",
+        "blob-1-normal": "blob-1 32s infinite ease-in-out",
+        "blob-1-fast": "blob-1 26s infinite ease-in-out",
+        "blob-2-slow": "blob-2 37s infinite ease-in-out", 
+        "blob-2-normal": "blob-2 30s infinite ease-in-out", 
+        "blob-2-fast": "blob-2 22s infinite ease-in-out", 
       },
       keyframes: {
         'gradient-animation': {
@@ -84,6 +90,43 @@ export default {
           "100%": {
             opacity: "1",
           }
+        },
+        "blob-1": {
+          "0%": {
+            transform: "translate(0vw, 0vh) scale(1)",
+          },
+          "25%": {
+            transform: "translate(30vw, -50vh) scale(0.8)", 
+          },
+          "50%": {
+            transform: "translate(110vw, 60vh) scale(1.4)",
+          },
+          "75%": {
+            transform: "translate(-100vw, 30vh) scale(1.1)", 
+          },
+          "100%": {
+            transform: "translate(0vw, 0vh) scale(1)",
+          },
+        },
+        "blob-2": {
+          "0%": {
+            transform: "translate(0vw, 0vh) scale(1)",
+          },
+          "20%": {
+            transform: "translate(-80vw, 10vh) scale(1.4)",
+          },
+          "40%": {
+            transform: "translate(20vw, -20vh) scale(0.9)", 
+          },
+          "60%": {
+            transform: "translate(-110vw, 110vh) scale(1.2)",
+          },
+          "80%": {
+            transform: "translate(50vw, 50vh) scale(1.3)", 
+          },
+          "100%": {
+            transform: "translate(0vw, 0vh) scale(1)",
+          },
         },
       },
     },
