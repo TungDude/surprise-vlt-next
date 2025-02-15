@@ -4,6 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Blob from "./components/Blob/Blob";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${itim.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-pink-100 via-pink-300 to-pink-500 bg-[length:300%_300%] animate-gradient-animation`}
+        className={`${itim.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-[length:300%_300%] bg-gray-50`}
       >
         <AuthProvider>
+          <Blob />
           <div
             className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center h-screen p-8 py-20 gap-16 sm:p-20 font-[family-name:var(--font-itim)]"
           >
