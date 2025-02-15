@@ -48,6 +48,9 @@ export default function FlipCardsPage() {
     return (
         <ProtectedRoute>
             <div
+                className="flex flex-col justify-center items-center gap-4"
+            >
+            <div
                 className="grid grid-cols-2 gap-2 p-2 w-[300px] sm:w-[350px] md:w-[400px] lg:w-[450px]"
             >
                 {flipCardsData.map(({ imgSrc, text }, index) => (
@@ -63,7 +66,7 @@ export default function FlipCardsPage() {
                 <>
                     <div
                         className={cn(
-                            "flex flex-cols justify-center items-center gap-2", 
+                            "flex justify-center items-center gap-2",
                             shake && "animate-shake",
                         )}
                     >
@@ -85,6 +88,7 @@ export default function FlipCardsPage() {
                     />
                 </>
             )}
+            </div>
         </ProtectedRoute>
     );
 }
