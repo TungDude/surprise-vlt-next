@@ -38,6 +38,7 @@ export default {
         "blob-2-slow": "blob-2 37s infinite ease-in-out", 
         "blob-2-normal": "blob-2 30s infinite ease-in-out", 
         "blob-2-fast": "blob-2 22s infinite ease-in-out", 
+        "pulse": "pulse 3s infinite ease-in-out",
       },
       keyframes: {
         'gradient-animation': {
@@ -126,6 +127,17 @@ export default {
           },
           "100%": {
             transform: "translate(0vw, 0vh) scale(1)",
+          },
+        },
+        "pulse": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+          },
+          "100%": {
+            transform: "scale(1)",
           },
         },
       },
