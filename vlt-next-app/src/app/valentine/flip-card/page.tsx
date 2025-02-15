@@ -75,7 +75,7 @@ export default function FlipCardsPage() {
                             onCheck={handleCheckboxClick}
                         />
                         <span
-                            className="break-words"
+                            className="break-words text-black"
                         >
                             ฉันยอมรับ ว่าฉันเป็นหมาจิ๋ว 🐕‍🦺
                         </span>
@@ -85,6 +85,7 @@ export default function FlipCardsPage() {
                         variant="blueboy"
                         onClick={handleClickContinue}
                         disabled={shake}
+                        className="text-white"
                     />
                 </>
             )}
