@@ -20,6 +20,9 @@ export default {
         darkred: "#b31616",
         lightblue: '#5abae1',
         blue: '#2eace0',
+        lightpurple: '#c1c1ff',
+        yellow: '#ffbf00',
+        pink: '#fe9be7',
       },
       animation: {
         'gradient-animation': 'gradient-animation 20s ease infinite',
