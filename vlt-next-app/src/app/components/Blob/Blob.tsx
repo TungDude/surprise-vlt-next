@@ -1,7 +1,7 @@
 import { cn } from "@/app/lib/utils";
 
 function Blob() {
-    const baseClass = "fixed overflow-hidden rounded-full mix-blend-multiply filter blur-lg opacity-20";
+    const baseClass = "fixed overflow-hidden rounded-full mix-blend-multiply filter blur-lg opacity-20 z-[-1]";
 
     return (
         <>

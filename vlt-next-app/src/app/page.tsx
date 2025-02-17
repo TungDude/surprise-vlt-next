@@ -57,7 +57,7 @@ export default function Home() {
               value === "delete" ? handleDelete() : handleButtonClick(value.toString())
             }
             className={cn(
-              value === "" ? "cursor-default" : "flex items-center justify-center w-16 h-16 text-black text-xl font-semibold rounded-full bg-white border shadow-md active:bg-gray-200"
+              value === "" ? "cursor-default" : "flex items-center justify-center w-16 h-16 text-black text-xl font-semibold rounded-full bg-white border shadow-md hover:bg-gray-100 active:bg-gray-200"
             )}
           >
             {value === "delete" ? <Delete /> : value}
