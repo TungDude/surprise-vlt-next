@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { cn } from "@/app/lib/utils";
 
 function Header() {
-    const router = useRouter();
     const pathName = usePathname();
     const [Play, setPlay] = useState(true);
 
@@ -26,14 +25,9 @@ function Header() {
         return () => clearInterval(interval);
     }, []);
 
-    const handleBackIndex = () => {
-        router.push("/");
-    }
-
     return (
         <p 
-            className="text-vary font-semibold text-purple-700 cursor-pointer"
-            onClick={handleBackIndex}
+            className="text-vary font-semibold text-purple-700"
         >
             {text.split("").map((char, index) => {
                 return (
