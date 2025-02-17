@@ -18,7 +18,7 @@ function Blob() {
                 className={cn(
                     baseClass,
                     "bg-yellow",
-                    "w-72 h-72",
+                    "w-40 h-40",
                     "bottom-2 left-24",
                     "animate-blob-1-normal"
                 )}
@@ -36,7 +36,7 @@ function Blob() {
                 className={cn(
                     baseClass,
                     "bg-pink",
-                    "w-72 h-72",
+                    "w-32 h-32",
                     "bottom-12 -right-8",
                     "animate-blob-2-slow"
                 )}
