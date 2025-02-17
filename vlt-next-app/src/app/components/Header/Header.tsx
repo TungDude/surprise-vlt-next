@@ -9,9 +9,11 @@ function Header() {
 
     const getText = () => {
         if (pathName === "/") {
-            return "❤️ Welcome!!! ❤️";
+            return "❤️ Welcome !!! ❤️";
         } else if (pathName.startsWith("/valentine")) {
             return "❤️ Happy Valentine's day ❤️";
+        } else if (pathName.startsWith("/anniversary")) {
+            return "❤️ Happy Anniversary ❤️";
         } else {
             return `❤️ ${pathName} ❤️`;
         }
