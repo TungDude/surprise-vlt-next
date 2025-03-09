@@ -46,27 +46,31 @@ export default function Anniversary() {
 
     return (
         <ProtectedRoute>
-            <Image
-                src="/images/stopwatch.png"
-                width={280}
-                height={280}
-                alt="stopwatch"
-                className={cn(
-                    "animate-wiggle-rotate cursor-pointer",
-                    isFadingOut && "animate-fadeout",
-                )}
-                onClick={handleClickStopwatch}
-            />
             <div
-                className={cn(
-                    "text-vary text-center text-black",
-                    "animate-fadein",
-                    isFadingOut && "animate-fadeout",
-                )}
-                key={currentText}
+                className="flex flex-col justify-center items-center text-vary text-center text-black"
             >
-                {texts[currentText]}
+                <Image
+                    src="/images/stopwatch.png"
+                    width={280}
+                    height={280}
+                    alt="stopwatch"
+                    className={cn(
+                        "cursor-pointer",
+                        isFadingOut ? "animate-fadeout" : "animate-wiggle-rotate",
+                    )}
+                    onClick={handleClickStopwatch}
+                />
+                <div
+                    className={cn(
+                        "animate-fadein",
+                        isFadingOut && "animate-fadeout",
+                    )}
+                    key={currentText}
+                >
+                    {texts[currentText]}
+                </div>
             </div>
+
         </ProtectedRoute>
     );
 }
