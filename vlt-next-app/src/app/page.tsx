@@ -13,10 +13,10 @@ export default function Home() {
   useEffect(() => {
     const handleVerifyPasscode = async () => {
       // Temporary: to hide secret
-      if (input === "270322") {
-        setInput("");
-        return;
-      }
+      // if (input === "270322") {
+      //   setInput("");
+      //   return;
+      // }
 
       if (input.length === 6) {
         const route = await verifyPasscode(input);  // Await the result here
