@@ -52,14 +52,14 @@ export default function Anniversary() {
                 height={280}
                 alt="stopwatch"
                 className={cn(
-                    "animate-wiggle-rotate cursor-pointer",
-                    isFadingOut && "animate-fadeout",
+                    "cursor-pointer",
+                    isFadingOut ? "animate-fadeout" : "animate-wiggle-rotate",
                 )}
                 onClick={handleClickStopwatch}
             />
             <div
                 className={cn(
-                    "text-vary text-center text-black",
+                    "text-black text-vary text-center",
                     "animate-fadein",
                     isFadingOut && "animate-fadeout",
                 )}
