@@ -47,7 +47,7 @@ export default function Anniversary() {
     return (
         <ProtectedRoute>
             <div
-                className="text-vary text-center text-black"
+                className="flex flex-col justify-center items-center text-vary text-center text-black"
             >
                 <Image
                     src="/images/stopwatch.png"
