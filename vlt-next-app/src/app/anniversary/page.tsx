@@ -59,7 +59,7 @@ export default function Anniversary() {
             />
             <div
                 className={cn(
-                    "text-vary text-center",
+                    "text-vary text-center text-black",
                     "animate-fadein",
                     isFadingOut && "animate-fadeout",
                 )}
