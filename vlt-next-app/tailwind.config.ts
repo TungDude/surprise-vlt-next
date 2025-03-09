@@ -31,6 +31,8 @@ export default {
         "unflip": 'unflip 0.6s forwards',
         "shake": 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',
         "fadein": "fadein 2s forwards",
+        "fadeout": "fadeout 2s forwards",
+        "wiggle-rotate": "wiggle-rotate 1s ease-in-out infinite",
         "blinker": "blink 1.4s infinite",
         "blob-1-slow": "blob-1 40s infinite ease-in-out",
         "blob-1-normal": "blob-1 32s infinite ease-in-out",
@@ -62,6 +64,14 @@ export default {
           '0%': { transform: 'rotateY(180deg)' },
           '100%': { transform: 'rotateY(0deg)' },
         },
+        'wiggle-rotate': {
+          '0%': { transform: 'rotate(0deg)' },
+          '20%': { transform: 'rotate(10deg)' },
+          '40%': { transform: 'rotate(-12deg)' },
+          '60%': { transform: 'rotate(8deg)' },
+          '80%': { transform: 'rotate(-6deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
         'shake': {
           '10%, 90%': {
             transform: 'translate3d(-1px, 0, 0)'
@@ -82,6 +92,14 @@ export default {
           },
           "100%": {
             opacity: "1",
+          }
+        },
+        "fadeout": {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            opacity: "0",
           }
         },
         "blink": {
