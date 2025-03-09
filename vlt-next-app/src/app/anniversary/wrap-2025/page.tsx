@@ -5,7 +5,9 @@ import ProtectedRoute from "@/app/components/ProtectedRoute/ProtectedRoute"
 export default function Wrap() {
   return (
     <ProtectedRoute>
-        <div>
+        <div
+          className="text-vary text-center text-black"
+        >
             Wrap 2025
         </div>
     </ProtectedRoute>
