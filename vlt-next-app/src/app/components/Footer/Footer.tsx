@@ -1,31 +1,31 @@
 "use client"
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import HomeButton from "../Button/HomeButton/HomeButton";
 import { useAuthContext } from "@/app/context/AuthContext";
-// import { Heart, Gift } from 'lucide-react';
+import { Heart, Gift } from 'lucide-react';
 import { cn } from "@/app/lib/utils";
 
 function Footer () {
-    // const router = useRouter();
+    const router = useRouter();
     const { authenticatedRoutes } = useAuthContext();
     const vAllowed = authenticatedRoutes?.some(route => route.startsWith(`valentine`));
     const aAllowed = authenticatedRoutes?.some(route => route.startsWith(`anniversary`));
 
-    // const handleClickHeart = () => {
-    //     if (!vAllowed) {
-    //         return;
-    //     }
+    const handleClickHeart = () => {
+        if (!vAllowed) {
+            return;
+        }
 
-    //     router.push("/valentine");
-    // }
+        router.push("/valentine");
+    }
 
-    // const handleClickGift = () => {
-    //     if (!aAllowed) {
-    //         return;
-    //     }
+    const handleClickGift = () => {
+        if (!aAllowed) {
+            return;
+        }
 
-    //     router.push("/anniversary");
-    // }
+        router.push("/anniversary");
+    }
 
     return (
         <>
@@ -33,13 +33,13 @@ function Footer () {
                 className={cn(
                     vAllowed ? "text-brightred hover:text-black" : "text-gray-400"
                 )}
-                // onClick={handleClickHeart}
+                onClick={handleClickHeart}
             >
-                {/* <Heart 
+                <Heart 
                     strokeWidth={2}
                     className="w-12 h-12 cursor-pointer"
-                /> */}
-                ❤️❤️❤️
+                />
+                {/* ❤️❤️❤️ */}
             </div>
             <div>
                 <HomeButton />
@@ -48,13 +48,13 @@ function Footer () {
                 className={cn(
                     aAllowed ? "text-pink hover:text-black" : "text-gray-400"
                 )}
-                // onClick={handleClickGift}
+                onClick={handleClickGift}
             >
-                {/* <Gift 
+                <Gift 
                     strokeWidth={2}
                     className="w-12 h-12 cursor-pointer"
-                /> */}
-                ❤️❤️❤️
+                />
+                {/* ❤️❤️❤️ */}
             </div>
         </>
     )

@@ -48,7 +48,7 @@ export default function RootLayout({
               <Header />
             </header>
             <main
-              className="flex flex-col gap-4 row-start-2 items-center sm:items-start"
+              className="flex flex-col gap-4 row-start-2 items-center"
             >
               {children}
             </main>
