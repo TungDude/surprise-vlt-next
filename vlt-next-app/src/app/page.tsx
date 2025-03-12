@@ -1,8 +1,8 @@
 "use client"
 import { useState, useEffect } from "react";
 import { Delete } from 'lucide-react';
-import { cn } from "./lib/utils";
-import { useAuthContext } from "./context/AuthContext";
+import { cn } from "../lib/utils";
+import { useAuthContext } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 
 export default function Home() {

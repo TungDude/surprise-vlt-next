@@ -1,5 +1,5 @@
 "use client";
-import { useAuthContext } from "@/app/context/AuthContext";
+import { useAuthContext } from "@/context/AuthContext";
 import { usePathname } from "next/navigation";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {

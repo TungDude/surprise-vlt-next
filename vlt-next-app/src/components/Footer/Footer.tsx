@@ -1,9 +1,9 @@
 "use client"
 import { useRouter } from "next/navigation";
 import HomeButton from "../Button/HomeButton/HomeButton";
-import { useAuthContext } from "@/app/context/AuthContext";
+import { useAuthContext } from "@/context/AuthContext";
 import { Heart, Gift } from 'lucide-react';
-import { cn } from "@/app/lib/utils";
+import { cn } from "@/lib/utils";
 
 function Footer () {
     const router = useRouter();

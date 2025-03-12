@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { cn } from "@/app/lib/utils";
+import { cn } from "@/lib/utils";
 
 function Header() {
     const pathName = usePathname();
@@ -9,7 +9,7 @@ function Header() {
 
     const getText = () => {
         if (pathName === "/") {
-            return "❤️ Welcome !!! ❤️";
+            return "❤️❤️ Welcome ❤️❤️";
         } else if (pathName.startsWith("/valentine")) {
             return "❤️ Happy Valentine's day ❤️";
         } else if (pathName.startsWith("/anniversary")) {

@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import Button from "../components/Button/Button";
+import Button from "@/components/Button/Button";
 import Image from "next/image";
-import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+import ProtectedRoute from "@/components/ProtectedRoute/ProtectedRoute";
 
 export default function Valentine() {
     const router = useRouter();
