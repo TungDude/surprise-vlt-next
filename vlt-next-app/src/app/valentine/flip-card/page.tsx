@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import ProtectedRoute from "@/app/components/ProtectedRoute/ProtectedRoute";
-import FlipCard from "@/app/components/FlipCard/FlipCard";
-import Button from "@/app/components/Button/Button";
-import Checkbox from "@/app/components/Checkbox/Checkbox";
-import { cn } from "@/app/lib/utils";
+import ProtectedRoute from "@/components/ProtectedRoute/ProtectedRoute";
+import FlipCard from "@/components/FlipCard/FlipCard";
+import Button from "@/components/Button/Button";
+import Checkbox from "@/components/Checkbox/Checkbox";
+import { cn } from "@/lib/utils";
 
 export default function FlipCardsPage() {
     const router = useRouter();

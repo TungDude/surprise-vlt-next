@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { cn } from "@/app/lib/utils";
+import { cn } from "@/lib/utils";
 
 function Header() {
     const pathName = usePathname();

@@ -1,8 +1,8 @@
 "use client"
 import { useState, useEffect } from "react";
-import RequestController from "@/app/lib/RequestController";
-import ProtectedRoute from "@/app/components/ProtectedRoute/ProtectedRoute"
-import TypingText from "@/app/components/TypingText/TypingText";
+import RequestController from "@/lib/RequestController";
+import ProtectedRoute from "@/components/ProtectedRoute/ProtectedRoute"
+import TypingText from "@/components/TypingText/TypingText";
 
 export default function MessagePage() {
     const [done, setDone] = useState(false);
