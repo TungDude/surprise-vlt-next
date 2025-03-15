@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import ProtectedRoute from "@/components/ProtectedRoute/ProtectedRoute";
 import RequestController from "@/lib/RequestController";
 import Image from "next/image";
@@ -36,12 +37,14 @@ const triggerAnimation = (
 };
 
 export default function Quiz() {
+    const router = useRouter();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [shake, setShake] = useState<boolean[]>([false, false]);
     const [explode, setExplode] = useState<boolean[]>([false, false]);
     const [quizData, setQuizData] = useState<QuizProps[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [showWin, setShowWin] = useState(false);
 
     useEffect(() => {
         fetchQuizData();
@@ -64,6 +67,14 @@ export default function Quiz() {
             setCurrentQuestion((prev) => (prev + 1) % quizData.length);
             // Update explode state only for the correct answer
             triggerAnimation(setExplode, key, 1000);
+
+            if (currentQuestion === quizData.length - 1) {
+                setShowWin(true);
+                setTimeout(() => {
+                    router.push("/anniversary/wrap-2025");
+                }, 2000);
+                return;
+            }
         } else {
             // Update shake state only for the wrong answer
             triggerAnimation(setShake, key, 820);
@@ -81,7 +92,7 @@ export default function Quiz() {
                 <div
                     className="w-full p-4 bg-black rounded-lg"
                 >
-                    {quizData[currentQuestion].question}
+                    {!showWin ? quizData[currentQuestion].question : "เก่งมากกกกกก 😎"}
                 </div>
                 <div
                     className="flex justify-center items-center gap-4"
@@ -98,7 +109,7 @@ export default function Quiz() {
                                 "cursor-pointer",
                                 shake[index] ? "animate-shake" : "",
                                 explode[index] ? "animate-explode" : "",
-                                shake[index] || explode[index] ? "pointer-events-none" : "",
+                                shake[index] || explode[index] || showWin ? "pointer-events-none" : "",
                             )}
                         />
                     ))}
